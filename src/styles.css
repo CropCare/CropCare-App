@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Sprig-Sans';
-    src: url("../src/assets/fonts/Sprig-Sans.woff2");
+  font-family: "Mona-Sans";
+  src: url("../src/assets/fonts/Mona-Sans.woff2");
 }
 
 body {
   background-color: #f2f8f6;
-  font-family: 'Sprig-Sans';
 }

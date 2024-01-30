@@ -1,0 +1,88 @@
+<main class="bg">
+  <section class="h-[100dvh] lg:h-[calc(100dvh-6rem)] flex">
+    <div
+      class="sm:bg w-full backdrop-brightness-50 lg:backdrop-brightness-100 lg:w-1/2 lg:px-8"
+    >
+      <app-navbar-sm></app-navbar-sm>
+      <div class="flex px-4 flex-col h-full py-12 lg:py-0 lg:justify-center">
+        <h1
+          class="text-4xl lg:text-7xl text-light lg:text-secondary text-pretty font-bold uppercase"
+        >
+          <span class="font-extralight">AI-powered</span> <br /><span
+            class="hidden lg:inline relative"
+            ><img
+              class="h-16 w-24 object-cover rounded-full inline-flex"
+              src="assets/images/bg2.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              class="w-10 h-10 bg-primary px-2 rounded-full absolute top-2 -right-4"
+              src="assets/images/plant.svg"
+              alt=""
+              loading="lazy"
+            />
+          </span>
+          agriculture at your fingertips
+        </h1>
+        <p
+          class="text-xl max-w-xl text-light lg:text-gray-dark tracking-tight my-10"
+        >
+          Harnessing technology for smarter agriculture involves leveraging
+          cutting-edge innovations like AI, IOT, and data analytics to enhance
+          decision-making.
+        </p>
+        <a
+          routerLink="/register"
+          class="cursor-pointer w-fit py-3 bg-primary px-12 font-semibold text-secondary rounded-full font-medium hover:bg-secondary hover:text-light transition duration-300 ease-in-out"
+          >Get started</a
+        >
+      </div>
+    </div>
+    <div class="hidden lg:block relative w-1/2 px-8 py-4">
+      <img
+        class="h-full object-cover w-full rounded-2xl"
+        src="assets/images/bg.jpg"
+        alt=""
+        loading="lazy"
+      />
+      <div
+        class="flex justify-between p-2 rounded-full backdrop-blur-md backdrop-brightness-90 absolute top-12 w-[90%] left-1/2 -translate-x-1/2 flex gap-4 items-center"
+      >
+        <div class="h-full flex">
+          <img
+            class="h-12 rounded-full"
+            src="assets/images/farmer3.jpg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            class="h-12 rounded-full -translate-x-3"
+            src="assets/images/farmer1.jpg"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            class="h-12 rounded-full -translate-x-6"
+            src="assets/images/farmer2.jpg"
+            alt=""
+            loading="lazy"
+          />
+          <p
+            class="h-12 w-12 flex items-center p-1 font-semibold bg-light rounded-full -translate-x-9"
+          >
+            +92K
+          </p>
+          <p class="flex items-center text-light font-medium -translate-x-6">
+            Join AI Farmers Community
+          </p>
+        </div>
+        <a
+          routerLink="/register"
+          class="cursor-pointer block py-3 bg-light font-semibold px-10 text-secondary rounded-full font-medium hover:bg-secondary hover:text-light transition duration-300 ease-in-out"
+          >Sign Up</a
+        >
+      </div>
+    </div>
+  </section>
+</main>

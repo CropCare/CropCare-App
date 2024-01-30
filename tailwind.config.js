@@ -4,14 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#70d44b",
+        primary: "#bff466",
         "primary-light": "#f1fbed",
         secondary: "#124734",
         tertiary: "#f3efa1",
         accent: "#ff8b11",
         dark: "#1A2421",
         light: "#f2f8f6",
-        gray: "#c0c4c3"
+        gray: "#c0c4c3",
+        "gray-dark": "#5a5a5a",
+      },
+      fontFamily: {
+        sans: ["Mona-Sans", "sans-serif"],
       },
     },
   },

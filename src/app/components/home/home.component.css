@@ -1,0 +1,12 @@
+/* *{
+    border: 1px solid red;
+} */
+
+@media screen and (max-width: 1024px) {
+  .bg {
+    background-image: url("../../../assets/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
