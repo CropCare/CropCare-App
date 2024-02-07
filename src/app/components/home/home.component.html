@@ -1,9 +1,9 @@
 <main class="bg">
+  <!-- hero section -->
   <section class="h-[100dvh] lg:h-[calc(100dvh-6rem)] flex">
     <div
       class="sm:bg w-full backdrop-brightness-50 lg:backdrop-brightness-100 lg:w-1/2 lg:px-8"
     >
-      <app-navbar-sm></app-navbar-sm>
       <div class="flex px-4 flex-col h-full py-12 lg:py-0 lg:justify-center">
         <h1
           class="text-4xl lg:text-7xl text-light lg:text-secondary text-pretty font-bold uppercase"
@@ -12,15 +12,13 @@
             class="hidden lg:inline relative"
             ><img
               class="h-16 w-24 object-cover rounded-full inline-flex"
-              src="assets/images/bg2.jpg"
-              alt=""
-              loading="lazy"
+              src="assets/images/bg2.webp"
+              alt="Background image"
             />
             <img
               class="w-10 h-10 bg-primary px-2 rounded-full absolute top-2 -right-4"
               src="assets/images/plant.svg"
-              alt=""
-              loading="lazy"
+              alt="plant icon"
             />
           </span>
           agriculture at your fingertips
@@ -42,9 +40,8 @@
     <div class="hidden lg:block relative w-1/2 px-8 py-4">
       <img
         class="h-full object-cover w-full rounded-2xl"
-        src="assets/images/bg.jpg"
-        alt=""
-        loading="lazy"
+        src="assets/images/bg.webp"
+        alt="Background image"
       />
       <div
         class="flex justify-between p-2 rounded-full backdrop-blur-md backdrop-brightness-90 absolute top-12 w-[90%] left-1/2 -translate-x-1/2 flex gap-4 items-center"
@@ -52,21 +49,18 @@
         <div class="h-full flex">
           <img
             class="h-12 rounded-full"
-            src="assets/images/farmer3.jpg"
-            alt=""
-            loading="lazy"
+            src="assets/images/farmer3.webp"
+            alt="farmer"
           />
           <img
             class="h-12 rounded-full -translate-x-3"
-            src="assets/images/farmer1.jpg"
-            alt=""
-            loading="lazy"
+            src="assets/images/farmer1.webp"
+            alt="farmer"
           />
           <img
             class="h-12 rounded-full -translate-x-6"
-            src="assets/images/farmer2.jpg"
-            alt=""
-            loading="lazy"
+            src="assets/images/farmer2.webp"
+            alt="farmer"
           />
           <p
             class="h-12 w-12 flex items-center p-1 font-semibold bg-light rounded-full -translate-x-9"
@@ -79,10 +73,74 @@
         </div>
         <a
           routerLink="/register"
-          class="cursor-pointer block py-3 bg-light font-semibold px-10 text-secondary rounded-full font-medium hover:bg-secondary hover:text-light transition duration-300 ease-in-out"
+          class="cursor-pointer block py-3 bg-light font-semibold px-4 lg:px-10 text-secondary rounded-full font-medium hover:bg-secondary hover:text-light transition duration-300 ease-in-out"
           >Sign Up</a
         >
       </div>
+      <div class="absolute bottom-8 right-12 flex gap-4">
+        <div
+          class="bg-transparent backdrop-blur-md backdrop-brightness-[0.8] rounded-2xl px-6 py-4 text-light"
+        >
+          <p class="text-xl mb-2">
+            Soil pH Changes Stats <br />
+            Across Fields
+          </p>
+          <p class="text-3xl font-display">
+            14.3<span class="font-thin">%</span>
+          </p>
+          <p class="font-extralight">+8.2%/month</p>
+          <img class="w-36 mx-auto" src="assets/images/trend.svg" alt="" />
+        </div>
+        <div
+          class="bg-transparent backdrop-blur-md backdrop-brightness-[0.8] rounded-2xl text-light flex flex-col justify-between"
+        >
+          <p class="text-sm text-center pt-6 text-light">72.3%</p>
+          <div class="relative w-14 h-[78%] rounded-2xl bg-primary">
+            <div
+              class="absolute top-4 left-1/2 -translate-x-1/2 h-10 w-10 p-2 rounded-full backdrop-brightness-[0.8] flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="512"
+                height="512"
+                x="0"
+                y="0"
+                viewBox="0 0 91 91"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+                class="w-5 h-5"
+              >
+                <g>
+                  <path
+                    d="M33.4 87.6c3.4 1.4 7.1 2 10.7 2 7.2 0 14.5-2.6 19.9-7.4C68.8 78 76.1 68.3 71.4 51c-1.8-6.7-5.3-12.7-8.6-18.4-5.1-8.8-10.3-17.8-10.2-30.2 0-.8-.5-1.6-1.2-1.9-.8-.3-1.6-.2-2.3.3-18.6 16.3-35.6 45.9-32 67.2 1.8 9.3 7.4 16.1 16.3 19.6zM48.7 7c1 11.2 5.9 19.6 10.6 27.7 3.3 5.8 6.5 11.2 8.2 17.4 3 11.2.8 20.7-6.2 27-6.9 6.1-17.7 8-26.3 4.6-7.6-3-12.2-8.6-13.5-16.5C18.3 48.9 32.6 22.7 48.7 7z"
+                    fill="#000000"
+                    opacity="1"
+                    data-original="#000000"
+                    class=""
+                  ></path>
+                  <path
+                    d="M44.7 76.3c1.8 0 2.3-1.3 2.3-2s-.4-2.1-2.1-2.2h-.4c-1.7.2-2.1 1.5-2.1 2.2s.6 2 2.3 2zM52.6 74.1c.4 0 .8-.1 1.2-.4 4.9-3.4 7.1-8.6 6.1-14-.2-1.1-1.3-1.9-2.5-1.6-1.1.2-1.9 1.3-1.6 2.5.8 3.7-.8 7.3-4.3 9.8-.9.7-1.2 2-.5 2.9.3.5.9.8 1.6.8z"
+                    fill="#000000"
+                    opacity="1"
+                    data-original="#000000"
+                    class=""
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <p
+              class="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark font-bold [writing-mode:vertical-lr]"
+            >
+              Water Savings
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- spacer -->
+  <div class="h-20 lg:h-44"></div>
 </main>
