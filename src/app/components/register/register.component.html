@@ -11,17 +11,47 @@
       <h1
         class="text-3xl md:text-4xl lg:text-5xl text-dark font-semibold mb-2 md:mb-4"
       >
-        Login
+        Sign Up
       </h1>
       <p class="md:text-xl text-gray-dark">
         See your growth and manage your farm! <br />
-        Don't have an account?
+        Already have an account?
         <a
           class="font-semibold text-accent cursor-pointer hover:underline"
-          routerLink="/register"
-          >Sign up</a
+          routerLink="/login"
+          >Login</a
         >.
       </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="w-full">
+        <p class="md:text-lg text-gray-dark mb-2">
+          First Name<span class="text-accent">*</span>
+        </p>
+        <input
+          type="text"
+          class="w-full border border-[2px] border-light px-4 py-4 rounded-xl shadow border-gray-dark focus:outline-none focus:border-primary"
+          placeholder="Enter your first name"
+          required
+          (input)="validateName()"
+          [formControl]="firstNameControl"
+        />
+      </div>
+
+      <div class="w-full">
+        <p class="md:text-lg text-gray-dark mb-2">
+          Last Name<span class="text-accent">*</span>
+        </p>
+        <input
+          type="text"
+          class="w-full border border-[2px] border-light px-4 py-4 rounded-xl shadow border-gray-dark focus:outline-none focus:border-primary"
+          placeholder="Enter your last name"
+          required
+          (input)="validateName()"
+          [formControl]="lastNameControl"
+        />
+      </div>
     </div>
 
     <div>
@@ -52,16 +82,28 @@
     </div>
     <button
       class="bg-primary text-dark font-semibold text-lg md:text-xl px-8 py-3 md:px-12 rounded-full hover:bg-dark hover:text-tertiary transition duration-300 ease-in-out"
-      (click)="login()"
+      (click)="signUp()"
       [disabled]="isLoading"
       [ngClass]="{
         'opacity-50 hover:bg-primary hover:text-dark cursor-wait': isLoading
       }"
     >
-      Login
+      Sign Up
     </button>
-    @if (snack) {
-    <p class="text-red-500 text-center text-sm text-gray-dark">{{ snack }}</p>
+    @if (snack[0]) {
+    <div>
+      @for (line of snack; track $index) {
+      <p
+        class="text-center text-sm text-gray-dark"
+        [ngClass]="{
+          'text-green-500': isSuccessfull,
+          'text-red-500': !isSuccessfull
+        }"
+      >
+        {{ line }}
+      </p>
+      }
+    </div>
     }
   </div>
 </main>

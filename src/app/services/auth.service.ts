@@ -10,20 +10,24 @@ export class AuthService {
   api = environment.apiURL;
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<boolean> {
-    return new Observable<boolean>((observer) => {
-      this.http
-        .post(this.api + 'login', { username: username, password: password })
-        .subscribe(
-          (res: any) => {
-            observer.next(res.success);
-            observer.complete();
-          },
-          (error) => {
-            observer.next(false);
-            observer.complete();
-          }
-        );
+  login(email: string, password: string) {
+    return this.http.post(this.api + 'login', {
+      email: email,
+      password: password,
+    });
+  }
+
+  register(
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string
+  ) {
+    return this.http.post(this.api + 'adduser', {
+      email: email,
+      password: password,
+      first_name: firstName,
+      last_name: lastName,
     });
   }
 }

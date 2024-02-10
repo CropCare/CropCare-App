@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -10,13 +10,24 @@ import { RouterLink } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   snack: string = '';
   isLoading: boolean = false;
   emailControl = new FormControl('');
   passwordControl = new FormControl('');
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    const email = this.route.snapshot.paramMap.get('email');
+    if (email != null) {
+      this.emailControl.setValue(email);
+    }
+   
+  }
 
   login() {
     const email = this.emailControl.value;
@@ -30,8 +41,8 @@ export class LoginComponent {
     ) {
       this.isLoading = true;
       this.authService.login(email, password).subscribe(
-        (success: boolean) => {
-          if (success) {
+        (res: any) => {
+          if (res.success) {
             // Handle successful login (e.g., redirect to another page)
             console.log('Login successful');
             this.snack = 'Login successful';
@@ -46,7 +57,7 @@ export class LoginComponent {
         (error) => {
           // Handle error from the login function
           console.error('An error occurred during login:', error);
-          this.snack = 'An error occurred during login:' + error;
+          this.snack = 'Email or password is incorrect!';
           this.isLoading = false;
         }
       );
