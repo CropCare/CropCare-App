@@ -24,7 +24,9 @@
     </div>
 
     <div>
-      <p class="md:text-lg text-gray-dark mb-2">Email*</p>
+      <p class="md:text-lg text-gray-dark mb-2">
+        Email<span class="text-accent">*</span>
+      </p>
       <input
         type="email"
         class="w-full border border-[2px] border-light px-4 py-4 rounded-xl shadow border-gray-dark focus:outline-none focus:border-primary"
@@ -35,7 +37,9 @@
         [formControl]="emailControl"
       />
 
-      <p class="md:text-lg text-gray-dark mt-4 md:mt-8 mb-2">Password*</p>
+      <p class="md:text-lg text-gray-dark mt-4 md:mt-8 mb-2">
+        Password<span class="text-accent">*</span>
+      </p>
       <input
         type="password"
         class="w-full border border-[2px] border-light px-4 py-4 rounded-xl shadow border-gray-dark focus:outline-none focus:border-primary"
