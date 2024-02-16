@@ -8,6 +8,7 @@ import { environment } from '../../../src/environments/environment';
 })
 export class AuthService {
   api = environment.apiURL;
+  private isAuthenticated: boolean = false;
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
@@ -29,5 +30,13 @@ export class AuthService {
       first_name: firstName,
       last_name: lastName,
     });
+  }
+
+  setLoggedIn(value: boolean) {
+    this.isAuthenticated = value;
+  }
+  
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
   }
 }

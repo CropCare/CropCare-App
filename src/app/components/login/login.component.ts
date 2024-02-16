@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     if (email != null) {
       this.emailControl.setValue(email);
     }
-   
   }
 
   login() {
@@ -47,11 +46,14 @@ export class LoginComponent implements OnInit {
             console.log('Login successful');
             this.snack = 'Login successful';
             this.isLoading = false;
+            this.authService.setLoggedIn(true);
+            console.log(this.authService.isLoggedIn());
           } else {
             // Handle unsuccessful login
             console.log('Invalid credentials');
             this.snack = 'Email or password is incorrect!';
             this.isLoading = false;
+            this.authService.setLoggedIn(false);
           }
         },
         (error) => {
