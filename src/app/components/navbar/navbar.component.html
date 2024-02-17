@@ -14,7 +14,7 @@
           alt="CropCare Logo"
         />
       </a>
-      <div class="flex items-center lg:order-2">
+      <div class="lg:hidden flex items-center lg:order-2">
         <button
           type="button"
           class="inline-flex items-center p-2 ml-1 text-sm text-secondary rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray"
@@ -50,7 +50,7 @@
       </div>
 
       <div
-        class="hidden justify-between items-center w-full lg:flex font-medium lg:w-auto lg:order-1"
+        class="hidden justify-between items-center w-full lg:flex font-medium lg:w-auto"
         [ngClass]="{ block: !isMenuCollapsed, hidden: isMenuCollapsed }"
       >
         <ul class="flex flex-col mt-2 text-sm lg:flex-row lg:space-x-6 lg:mt-0">
@@ -60,6 +60,7 @@
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               class="block py-2 pr-4 pl-3 text-secondary border-b border-gray lg:border-0 lg:p-0"
+              (click)="toggleMenu()"
               aria-current="page"
               >Home</a
             >
@@ -70,6 +71,7 @@
               routerLink="/dashboard"
               routerLinkActive="active"
               class="block py-2 pr-4 pl-3 text-secondary border-b border-gray lg:border-0 lg:p-0"
+              (click)="toggleMenu()"
               >Dashboard</a
             >
           </li>
@@ -78,6 +80,7 @@
               routerLink="/features"
               routerLinkActive="active"
               class="block py-2 pr-4 pl-3 text-secondary border-b border-gray lg:border-0 lg:p-0"
+              (click)="toggleMenu()"
               >Features</a
             >
           </li>
@@ -86,6 +89,7 @@
               routerLink="/about"
               routerLinkActive="active"
               class="block py-2 pr-4 pl-3 text-secondary border-b border-gray lg:border-0 lg:p-0"
+              (click)="toggleMenu()"
               >About</a
             >
           </li>
@@ -93,12 +97,26 @@
             <a
               routerLink="/contact"
               routerLinkActive="active"
-              class="block py-2 pr-4 pl-3 text-secondary border-b border-gray lg:border-0 lg:p-0"
+              class="block py-2 pr-4 pl-3 text-secondary lg:border-0 lg:p-0"
+              (click)="toggleMenu()"
               >Contact</a
             >
           </li>
+          <li>
+            <a
+              routerLink="/login"
+              class="lg:hidden block w-fit mt-2 bg-primary px-6 py-2 rounded-full font-semibold text-dark hover:bg-secondary hover:text-tertiary transition duration-300"
+              (click)="toggleMenu()"
+              >Sign In
+            </a>
+          </li>
         </ul>
       </div>
+      <a
+        routerLink="/login"
+        class="hidden lg:block bg-dark px-6 py-2 rounded-full font-semibold text-light hover:bg-primary hover:text-dark transition duration-300"
+        >Sign In
+      </a>
     </div>
   </nav>
 </header>

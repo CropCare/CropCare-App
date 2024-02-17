@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -19,6 +19,8 @@ export class RegisterComponent {
   passwordControl = new FormControl('');
   firstNameControl = new FormControl('');
   lastNameControl = new FormControl('');
+  @ViewChild('pass') passwordInput!: ElementRef;
+
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -116,5 +118,15 @@ export class RegisterComponent {
       this.snack = [];
       return true;
     }
+  }
+
+
+
+  showPassword: boolean = false;
+
+  togglePasswordVisibility() {
+    const inputEl: HTMLInputElement = this.passwordInput.nativeElement;
+    this.showPassword = !this.showPassword;
+    inputEl.type = this.showPassword ? 'text' : 'password';
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   isLoading: boolean = false;
   emailControl = new FormControl('');
   passwordControl = new FormControl('');
+  @ViewChild('pass') passwordInput!: ElementRef;
+
 
   constructor(
     private authService: AuthService,
@@ -97,5 +99,14 @@ export class LoginComponent implements OnInit {
       this.snack = '';
       return true;
     }
+  }
+
+  
+  showPassword: boolean = false;
+
+  togglePasswordVisibility() {
+    const inputEl: HTMLInputElement = this.passwordInput.nativeElement;
+    this.showPassword = !this.showPassword;
+    inputEl.type = this.showPassword ? 'text' : 'password';
   }
 }
