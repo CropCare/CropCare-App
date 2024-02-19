@@ -1,7 +1,10 @@
 <main class="p-2 md:p-4 flex flex-row gap-4">
   <nav>
     <div class="flex flex-col gap-8 bg-dark py-8 px-4 rounded-full">
-      <button>
+      <button
+        (click)="switchTab('water')"
+        [class.active]="currentTab === 'water'"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -13,7 +16,7 @@
           viewBox="0 0 1000 1000"
           style="enable-background: new 0 0 512 512"
           xml:space="preserve"
-          class="w-8 h-8 text-primary"
+          class="w-8 h-8 text-gray"
         >
           <g>
             <path
@@ -37,11 +40,14 @@
           </g>
         </svg>
       </button>
-      <button>
+      <button
+        (click)="switchTab('electricity')"
+        [class.active]="currentTab === 'electricity'"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          class="w-8 h-8 text-primary"
+          class="w-8 h-8 text-gray"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           width="512"
           height="512"
@@ -67,7 +73,10 @@
           </g>
         </svg>
       </button>
-      <button>
+      <button
+        (click)="switchTab('fertilizer')"
+        [class.active]="currentTab === 'fertilizer'"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -79,7 +88,7 @@
           viewBox="0 0 64 64"
           style="enable-background: new 0 0 512 512"
           xml:space="preserve"
-          class="w-8 h-8 text-primary"
+          class="w-8 h-8 text-gray"
         >
           <g>
             <path
@@ -101,5 +110,14 @@
       </button>
     </div>
   </nav>
-  <section>dsfsfsd</section>
+  <section>
+    @switch (currentTab) { @case ('water') {
+    <app-water-dash></app-water-dash>
+    } @case ('electricity') {
+    <app-electricity-dash></app-electricity-dash>
+    } @case ('fertilizer') {
+    <app-fertilizer-dash></app-fertilizer-dash>
+    } @default {
+    <app-water-dash></app-water-dash>} }
+  </section>
 </main>
