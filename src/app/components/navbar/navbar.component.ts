@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class NavbarComponent {
   isMenuCollapsed = true;
 
+  constructor(public authService: AuthService) {}
+
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
+
+  signOut() {
+    this.authService.signOut();
   }
 }

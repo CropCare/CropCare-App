@@ -8,7 +8,9 @@ import { environment } from '../../../src/environments/environment';
 export class AuthService {
   api = environment.apiURL;
   private isAuthenticated: boolean = false;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.isAuthenticated = localStorage.getItem('loggedIn') === 'true';
+  }
 
   login(email: string, password: string) {
     return this.http.post(this.api + 'login', {
@@ -33,9 +35,15 @@ export class AuthService {
 
   setLoggedIn(value: boolean) {
     this.isAuthenticated = value;
+    localStorage.setItem('loggedIn', 'true');
   }
   
   isLoggedIn(): boolean {
     return this.isAuthenticated;
+  }
+
+  signOut() {
+    this.isAuthenticated = false;
+    localStorage.setItem('loggedIn', 'false');
   }
 }

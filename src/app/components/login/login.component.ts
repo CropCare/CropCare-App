@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -44,14 +45,11 @@ export class LoginComponent implements OnInit {
       this.authService.login(email, password).subscribe(
         (res: any) => {
           if (res.success) {
-            // Handle successful login (e.g., redirect to another page)
-            console.log('Login successful');
-            this.snack = 'Login successful';
             this.isLoading = false;
             this.authService.setLoggedIn(true);
-            console.log(this.authService.isLoggedIn());
+            this.router.navigate(['/dashboard']);
           } else {
-            // Handle unsuccessful login
+          
             console.log('Invalid credentials');
             this.snack = 'Email or password is incorrect!';
             this.isLoading = false;
@@ -59,7 +57,7 @@ export class LoginComponent implements OnInit {
           }
         },
         (error) => {
-          // Handle error from the login function
+     
           console.error('An error occurred during login:', error);
           this.snack = 'Email or password is incorrect!';
           this.isLoading = false;

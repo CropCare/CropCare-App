@@ -103,20 +103,38 @@
             >
           </li>
           <li>
+            @if (!authService.isLoggedIn()) {
             <a
               routerLink="/login"
               class="lg:hidden block w-fit mt-2 bg-primary px-6 py-2 rounded-full font-semibold text-dark hover:bg-secondary hover:text-tertiary transition duration-300"
               (click)="toggleMenu()"
               >Sign In
             </a>
+            }@else {
+            <button
+              class="lg:hidden block w-fit mt-2 bg-gray px-6 py-2 rounded-full font-semibold text-dark hover:bg-red-500 hover:text-light transition duration-300"
+              (click)="signOut()"
+            >
+              Sign Out
+            </button>
+            }
           </li>
         </ul>
       </div>
+      @if (!authService.isLoggedIn()) {
       <a
         routerLink="/login"
         class="hidden lg:block bg-dark px-6 py-2 rounded-full font-semibold text-light hover:bg-primary hover:text-dark transition duration-300"
         >Sign In
       </a>
+      }@else {
+      <button
+        class="hidden lg:block w-fit mt-2 bg-gray px-6 py-2 rounded-full font-semibold text-dark hover:bg-red-500 hover:text-light transition duration-300"
+        (click)="signOut()"
+      >
+        Sign Out
+      </button>
+      }
     </div>
   </nav>
 </header>
