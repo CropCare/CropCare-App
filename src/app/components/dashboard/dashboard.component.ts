@@ -19,8 +19,6 @@ import { NgClass } from '@angular/common';
 export class DashboardComponent {
   currentTab = 'water';
 
-  constructor() {}
-
   switchTab(tab: string) {
     this.currentTab = tab;
   }
