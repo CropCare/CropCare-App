@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
   isMenuCollapsed = true;
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
@@ -21,5 +21,6 @@ export class NavbarComponent {
 
   signOut() {
     this.authService.signOut();
+    this.router.navigate(['/']);
   }
 }
