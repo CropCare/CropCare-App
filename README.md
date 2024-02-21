@@ -45,7 +45,7 @@ To run the CropCare project locally, follow these steps:
 
 5. Open your web browser and navigate to http://localhost:4200 to view the CropCare application running locally.
 
-### Note: Make sure you have Node.js and npm installed on your system before running the above commands. If not, you can download and install them from the official Node.js website: [Node.js](https://nodejs.org/). The project also uses Angular CLI version 17.1, which can be installed globally using the following command: `npm install -g @angular/cli@17.0.5`.
+### Note: Make sure you have Node.js and npm installed on your system before running the above commands. If not, you can download and install them from the official Node.js website: [Node.js](https://nodejs.org/). The project also uses Angular CLI version 17.0.5, which can be installed globally using the following command: `npm install -g @angular/cli@17.0.5`.
 
 
 
